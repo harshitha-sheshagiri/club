@@ -9,7 +9,7 @@ const InstagramButton = () => {
 
   return (
     <button onClick={handleClick} className="instagram-button">
-      Check us out on Instagram!
+    Instagram
     </button>
   );
 };

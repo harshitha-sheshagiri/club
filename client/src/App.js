@@ -26,13 +26,15 @@ function App() {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/domains" element={<Domains />} />
           <Route path="/projectpage" element={<ProjectPage />} />
-          <Route path="/results" element={<ResultsPage />} />
+          {/* <Route path="/results" element={<ResultsPage />} /> */}
 
           {/* New Route for About Club */}
           <Route path="/about-club" element={<AboutClub />} />
 
           {/* Dynamic Route for Domain Details */}
           <Route path="/domain/:domainId" element={<DomainDetails />} />
+          <Route path="/results/:clubName" element={<ResultsPage />} /> // Add this line
+
         </Routes>
       </div>
     </Router>

@@ -12,7 +12,9 @@ const ProjectPage = () => {
     if (action === 'Apply Now') {
       navigate('/about-club'); // Redirect to AboutClub page on first button click
     } else if (action === 'Check for Results') {
-      navigate('/results'); // Redirect to ResultsPage on second button click
+      // Create a dynamic path based on the club title
+    const formattedTitle = title.toLowerCase().replace(/\s+/g, '-'); // Convert title to a URL-friendly format
+    navigate(`/results/${formattedTitle}`); // Redirect to dynamic results page
     } else {
       alert(`${action} clicked for ${title}`); // Handle other actions (optional)
     }

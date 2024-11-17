@@ -1,0 +1,18 @@
+/* AboutSection.css */
+.about-section {
+    max-width: 300px;
+    text-align: center;
+    
+    
+  }
+  
+  .about-section h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .about-section p {
+    font-size: 1em;
+    line-height: 1.5;
+  }

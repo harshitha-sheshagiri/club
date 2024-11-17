@@ -16,7 +16,9 @@
     color: #ffffff;
     margin: 0;
     text-align: center;
-  }
+    padding-bottom: 75px;
+}
+  
   
   .back-button {
     padding: 0.5rem 1rem;
@@ -34,15 +36,16 @@
   
   .cards-container {
     display: flex;
-    justify-content: space-between; /* Adjust spacing as needed */
+    gap:60px;
+    /* justify-content: space-between;  */
   }
   
   /* Make cards take up equal space */
-  .cards-container > div {
+  /* .cards-container > div {
     flex: 0 1 calc(33.333% - 2rem);
     min-width: 300px;
   }
-  
+   */
   /* Responsive design */
   @media (max-width: 1024px) {
     .cards-container > div {

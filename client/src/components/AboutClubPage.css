@@ -21,3 +21,6 @@
   }
   
   /* Add any other styles needed for images, videos, etc. */
+  .new{
+    display:flex;
+  }

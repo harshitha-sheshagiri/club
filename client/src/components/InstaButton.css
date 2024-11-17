@@ -29,6 +29,8 @@
     align-items: center;
     cursor: pointer;
     transition: box-shadow 0.3s;
+    justify-content: center;
+    margin-left:100px;
   }
   .instagram-button:hover {
     background: linear-gradient(45deg, #d9534f, #c0392b, #9c1a6b);
