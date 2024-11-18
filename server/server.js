@@ -6,7 +6,7 @@ const { ObjectId } = require('mongodb');
 // Import models (ensure paths are correct)
 const Domain = require('../server/models/domain');  // Import the Domain model
 const Result = require('../server/models/results');
-const Event = require("./models/Event");  // Import the Result model (ensure it's defined correctly)
+// const Event = require("./models/Event");  // Import the Result model (ensure it's defined correctly)
 
 const app = express();
 const port = 5001;
@@ -87,38 +87,38 @@ app.post('/result/:clubName', async (req, res) => {
 });
 
 // Add an event with category and reminder
-app.post("/calendar/events", async (req, res) => {
-    const { title, date, description, category, reminder } = req.body;
+// app.post("/calendar/events", async (req, res) => {
+//     const { title, date, description, category, reminder } = req.body;
   
-    try {
-      const newEvent = new Event({ title, date, description, category, reminder });
-      await newEvent.save();
-      console.log("Event saved to MongoDB:", newEvent);
-      res.status(201).json(newEvent);
-    } catch (err) {
-      console.error("Error saving event:", err.message);
-      res.status(500).send("Server Error: " + err.message);
-    }
-  });
+//     try {
+//       const newEvent = new Event({ title, date, description, category, reminder });
+//       await newEvent.save();
+//       console.log("Event saved to MongoDB:", newEvent);
+//       res.status(201).json(newEvent);
+//     } catch (err) {
+//       console.error("Error saving event:", err.message);
+//       res.status(500).send("Server Error: " + err.message);
+//     }
+//   });
   
-  // Get all events
-  app.get("/calendar/events", async (req, res) => {
-    try {
-      const events = await Event.find();
-      res.json(events);
-    } catch (err) {
-      res.status(500).send(err.message);
-    }
-  });
+//   // Get all events
+//   app.get("/calendar/events", async (req, res) => {
+//     try {
+//       const events = await Event.find();
+//       res.json(events);
+//     } catch (err) {
+//       res.status(500).send(err.message);
+//     }
+//   });
   
-  // Catch all other routes
-  app.all("*", (req, res) => {
-    res.status(404).send("Route not found");
-  });
+//   // Catch all other routes
+//   app.all("*", (req, res) => {
+//     res.status(404).send("Route not found");
+//   });
   
-  app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-  });
+//   app.listen(port, () => {
+//     console.log(`Server running at http://localhost:${port}`);
+//   });
 
 // Start the server
 app.listen(port, () => {
