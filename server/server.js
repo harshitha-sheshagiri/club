@@ -1,7 +1,9 @@
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
-const Domain = require('../server/models/domain');  // Import the Member model
+const Domain = require('../server/models/domain');
+const DomainsMembers = require('./models/domains_members')
+const Member = require('./models/member')
 const { ObjectId } = require('mongodb');
 
 const app = express();
@@ -20,23 +22,71 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get('/domain/:domainId', async (req, res) => {
+app.get('/domain/nlp', async (req, res) => {
     try {
-        const objectId = new ObjectId(req.params.domainId);
+        const domain = await Domain.findOne({ title: "nlp" });
+        const domainMemberMap = await DomainsMembers.find({ domain_id: domain._id.toString() })
+        let members = []
+        for (let domainMember of domainMemberMap) {
+            const member = await Member.findOne({ _id: domainMember.member_id.toString() });
+            if (member) {
+                members.push(member);
+            }
+        }
 
-        // Fetch the domain based on the objectId
-        const domain = await Domain.findOne({ _id: objectId });
-
-        if (domain) {
-            res.json(domain);
+        if (members.length > 0) {
+            res.json(members);
         } else {
-            res.status(404).send('Domain not found');
+            res.status(404).send('No members in this domain!');
         }
     } catch (err) {
         res.status(500).send(err.message);
     }
 });
 
+app.get('/domain/computer', async (req, res) => {
+    try {
+        const domain = await Domain.findOne({ title: "computer" });
+        const domainMemberMap = await DomainsMembers.find({ domain_id: domain._id.toString() })
+        let members = []
+        for (let domainMember of domainMemberMap) {
+            const member = await Member.findOne({ _id: domainMember.member_id.toString() });
+            if (member) {
+                members.push(member);
+            }
+        }
+
+        if (members.length > 0) {
+            res.json(members);
+        } else {
+            res.status(404).send('No members in this domain!');
+        }
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
+
+app.get('/domain/cyber', async (req, res) => {
+    try {
+        const domain = await Domain.findOne({ title: "cyber" });
+        const domainMemberMap = await DomainsMembers.find({ domain_id: domain._id.toString() })
+        let members = []
+        for (let domainMember of domainMemberMap) {
+            const member = await Member.findOne({ _id: domainMember.member_id.toString() });
+            if (member) {
+                members.push(member);
+            }
+        }
+
+        if (members.length > 0) {
+            res.json(members);
+        } else {
+            res.status(404).send('No members in this domain!');
+        }
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
 
 // Start the server
 app.listen(port, () => {

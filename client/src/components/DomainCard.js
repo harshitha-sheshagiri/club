@@ -10,7 +10,8 @@ const DomainCard = ({ title, image, problemStatus, teamSize }) => {
     const handleCardClick = () => {
         // Convert the title to a suitable URL format (e.g., "NLP" -> "nlp")
         const domainPath = title.toLowerCase().replace(/\s+/g, '-');
-        navigate(`/domain/${domainPath}`);
+        navigate(`/domain/${domainPath}`); 
+        // navigate(`http://localhost:5001/domain/673a181b05d4e0ad114be7d3`);
     };
 
     return (

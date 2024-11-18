@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const domainSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    role: { type: Number, required: true },
-    contact: { type: String, required: true, unique: true }
+    title: { type: String, required: true, unique: true },
+    problemStatus: { type: String, required: true },
+    teamSize: { type: Number, required: true }
 });
 
 // Create the model
