@@ -1,7 +1,4 @@
-InSync@PESU
-A Virtual Noticeboard for University Engagement
-
-InSync@PESU is a centralized platform designed to streamline club recruitment, enhance peer-to-peer collaboration, and keep students updated with university happenings.
+InSync@PESU is a centralized platform designed to streamline club recruitment, enhance peer-to-peer collaboration, and keep students updated with university happenings , it's a virtual noticeboard.
 
 Features:
 Club Recruitments: Stay informed about the latest university club recruitments and acitivities.
